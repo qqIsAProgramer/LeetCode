@@ -12,8 +12,8 @@ public class CharacterReplacement_424 {
      * -----------------------------------------------------------------------------------
      * 解法：
      * 滑动窗口（非常多细节）
-     * @param s
-     * @param k
+     * @param s 由大写英文字母组成的字符串
+     * @param k 替换次数
      * @return
      */
     public int characterReplacement(String s, int k) {
@@ -27,7 +27,17 @@ public class CharacterReplacement_424 {
 
         int res = 0;
         int maxCount = 0;
-
+        int[] freq = new int[26];
+        while (right < len) {
+            freq[charArray[right] - 'A']++;
+            maxCount = Math.max(maxCount, freq[charArray[right] - 'A']);
+            right++;
+            if (right - left > maxCount + k) {
+                freq[charArray[left] - 'A']--;
+                left++;
+            }
+            res = Math.max(res, right - left);
+        }
         return res;
     }
 }
