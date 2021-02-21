@@ -1,4 +1,4 @@
-package com.qyl.字符串.滑动窗口;
+package com.qyl.数学.滑动窗口;
 
 /**
  * @Author: qyl
