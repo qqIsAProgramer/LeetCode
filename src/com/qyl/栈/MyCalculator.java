@@ -34,7 +34,6 @@ public class MyCalculator {
         List<String> res = new ArrayList<>();
         int i = 0;
         while (i < n) {
-            // 18-8*9/4+5
             if (priority(chs[i]) > 0) {
                 while (!stack.isEmpty() && priority(chs[i]) <= priority(stack.peek())) {
                     res.add(String.valueOf(stack.pop()));
@@ -117,7 +116,7 @@ public class MyCalculator {
     }
 
     public static void main(String[] args) {
-        String expr = "18-8*9/4-5";
+        String expr = "18-(6+2)/2+4*30";
         System.out.println(MyCalculator.calculate(expr));
     }
 }
