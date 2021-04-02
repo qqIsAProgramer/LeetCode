@@ -1,4 +1,4 @@
-package com.qyl.图;
+package com.qyl.BFS;
 
 import java.util.LinkedList;
 import java.util.Queue;
